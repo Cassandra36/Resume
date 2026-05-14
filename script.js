@@ -1,24 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Theme Toggle Logic
-    const themeBtn = document.getElementById('theme-toggle');
+    const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
 
-    themeBtn.addEventListener('click', () => {
+    // Check system preferences or previous choices
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        body.classList.add('dark-theme');
+        themeToggle.textContent = 'Switch to Light Theme';
+    } else {
+        themeToggle.textContent = 'Switch to Dark Theme';
+    }
+
+    // Toggle theme on button press
+    themeToggle.addEventListener('click', () => {
         body.classList.toggle('dark-theme');
-        themeBtn.textContent = body.classList.contains('dark-theme') 
-            ? 'Switch to Light Mode' 
-            : 'Switch to Dark Mode';
+        
+        const isDark = body.classList.contains('dark-theme');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        themeToggle.textContent = isDark ? 'Switch to Light Theme' : 'Switch to Dark Theme';
     });
-
-    // 2. Skill Interactivity
-    const skillCards = document.querySelectorAll('.skill-category');
-    
-    skillCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const details = card.getAttribute('data-info');
-            alert("Specific Experience: " + details);
-        });
-    });
-
-    console.log("Cassandra Harbison's Portfolio Loaded Successfully.");
 });
