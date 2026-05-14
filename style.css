@@ -28,19 +28,22 @@ body.dark-theme {
 
 /* --- Header --- */
 header {
-  background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%) !important;
+  color: #ffffff !important;
   padding: 4rem 2rem;
   text-align: center;
 }
 
-/* Forces Name, Tagline, and all Header Text to remain White */
-header h1,
-header h2,
-header h3,
-header p,
-header span,
-header div {
+/* Hard Override: Forces Name, Tagline, and all text inside header to remain White in both modes */
+body header,
+body header h1,
+body header h2,
+body header h3,
+body header p,
+body header span,
+body header div,
+body header .company,
+body header .job-header {
   color: #ffffff !important;
 }
 
