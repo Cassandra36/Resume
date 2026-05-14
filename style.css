@@ -26,7 +26,7 @@ body.dark-theme {
   --secondary: #94a3b8;
 }
 
-/* --- Header Layout & Image to Left --- */
+/* --- Header Layout & Fixed Image Left --- */
 header {
   background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%) !important;
   padding: 4rem 2rem;
@@ -36,28 +36,41 @@ header .container {
   max-width: 900px;
   margin: auto;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start; /* Aligns photo top cleanly with the name */
+  justify-content: flex-start;
   gap: 2.5rem;
-  text-align: left; /* Aligns text left next to the photo */
+  text-align: left;
 }
 
-/* Centers elements on small mobile screens */
+/* Force layout order if HTML structure has the image placed last */
+header img {
+  order: -1 !important; /* Moves photo to the leftmost position */
+  max-width: 160px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Text block grouping layout next to the photo */
+header .container > div:not(.badge-container) {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Layout adaptation for small screens */
 @media (max-width: 600px) {
   header .container {
     flex-direction: column;
+    align-items: center;
     text-align: center;
+  }
+  header img {
+    order: 0 !important;
   }
 }
 
-/* Ensures header photo scaling works nicely */
-header img {
-  max-width: 150px;
-  height: auto;
-  border-radius: 8px; /* Match standard border layout */
-}
-
-/* --- Ultimate Header Text Overrides (Forces Pure White) --- */
+/* --- Header Text Rule (Maintains White Text) --- */
 header, 
 header *, 
 header h1, 
@@ -69,7 +82,7 @@ header .container * {
   --text: #ffffff !important;
 }
 
-/* --- Layout --- */
+/* --- Main Layout --- */
 .container {
   max-width: 900px;
   margin: auto;
@@ -79,10 +92,11 @@ header .container * {
 /* --- Badges --- */
 .badge-container {
   display: flex;
-  justify-content: flex-start; /* Matches left alignment */
-  gap: 10px;
+  justify-content: flex-start;
+  gap: 8px;
   flex-wrap: wrap;
-  margin-top: 1rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
 @media (max-width: 600px) {
@@ -130,7 +144,7 @@ h2 {
 }
 
 .status {
-  color: #e11d48; /* Highlight for In Progress */
+  color: #e11d48;
 }
 
 /* --- Skills Grid --- */
@@ -161,7 +175,8 @@ h2 {
   text-decoration: none;
   border-radius: 8px;
   font-weight: bold;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
+  width: fit-content;
 }
 
 /* --- Footer --- */
