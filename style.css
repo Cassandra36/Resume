@@ -29,9 +29,19 @@ body.dark-theme {
 /* --- Header --- */
 header {
   background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%);
-  color: white; /* Ensures text remains white */
+  color: #ffffff;
   padding: 4rem 2rem;
   text-align: center;
+}
+
+/* Forces Name, Tagline, and all Header Text to remain White */
+header h1,
+header h2,
+header h3,
+header p,
+header span,
+header div {
+  color: #ffffff !important;
 }
 
 /* --- Layout --- */
@@ -89,7 +99,7 @@ h2 {
 }
 
 .status {
-  color: #e11d48; /* In Progress */
+  color: #e11d48; /* Highlight for In Progress */
 }
 
 /* --- Skills Grid --- */
