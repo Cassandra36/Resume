@@ -26,25 +26,47 @@ body.dark-theme {
   --secondary: #94a3b8;
 }
 
-/* --- Header --- */
+/* --- Header Layout & Image to Left --- */
 header {
   background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%) !important;
-  color: #ffffff !important;
   padding: 4rem 2rem;
-  text-align: center;
 }
 
-/* Hard Override: Forces Name, Tagline, and all text inside header to remain White in both modes */
-body header,
-body header h1,
-body header h2,
-body header h3,
-body header p,
-body header span,
-body header div,
-body header .company,
-body header .job-header {
+header .container {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  text-align: left; /* Aligns text left next to the photo */
+}
+
+/* Centers elements on small mobile screens */
+@media (max-width: 600px) {
+  header .container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Ensures header photo scaling works nicely */
+header img {
+  max-width: 150px;
+  height: auto;
+  border-radius: 8px; /* Match standard border layout */
+}
+
+/* --- Ultimate Header Text Overrides (Forces Pure White) --- */
+header, 
+header *, 
+header h1, 
+header p, 
+header span, 
+header div, 
+header .container * {
   color: #ffffff !important;
+  --text: #ffffff !important;
 }
 
 /* --- Layout --- */
@@ -57,10 +79,16 @@ body header .job-header {
 /* --- Badges --- */
 .badge-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* Matches left alignment */
   gap: 10px;
   flex-wrap: wrap;
   margin-top: 1rem;
+}
+
+@media (max-width: 600px) {
+  .badge-container {
+    justify-content: center;
+  }
 }
 
 .badge {
