@@ -6,7 +6,7 @@
     --accent-color: #0073e6;
     --card-bg: #f8f9fa;
     --border-color: #dddddd;
-    --header-bg: #f1f3f5;
+    --header-bg: #e5dbff;
 }
 
 body.dark-theme {
@@ -16,7 +16,7 @@ body.dark-theme {
     --accent-color: #8bcdff;
     --card-bg: #2d3135;
     --border-color: #43474e;
-    --header-bg: #23272a;
+    --header-bg: #e5dbff;
 }
 
 /* Base Rules */
