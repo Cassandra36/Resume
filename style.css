@@ -103,8 +103,13 @@ body.dark-theme .badge {
 }
 
 /* History Items (Education & Experience) */
-.edu-item, .job {
+.edu-item {
     margin-bottom: 20px;
+}
+
+.job {
+    display: block; /* Forces block context for each position */
+    margin-bottom: 35px; /* Clean spacing between roles */
 }
 
 .job-header {
@@ -112,11 +117,13 @@ body.dark-theme .badge {
     justify-content: space-between;
     font-weight: bold;
     margin-top: 15px;
+    font-size: 1.1rem;
 }
 
 .company {
     color: var(--accent-color);
-    font-weight: 500;
+    font-weight: 600;
+    margin-top: 2px;
 }
 
 .status {
@@ -130,11 +137,11 @@ body.dark-theme .status {
 
 ul {
     padding-left: 20px;
-    margin-top: 5px;
+    margin-top: 8px;
 }
 
 li {
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
 /* Technical Skills Layout */
