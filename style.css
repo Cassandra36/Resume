@@ -18,12 +18,24 @@
   transition: background 0.3s, color 0.3s;
 }
 
-/* --- Dark Mode Variables --- */
+/* --- Dark Mode Variables & Page Setup --- */
 body.dark-theme {
   --bg: #1e293b;
   --text: #f1f5f9;
   --card-bg: #334155;
   --secondary: #94a3b8;
+  
+  /* Hard fix: Forces the main page structure to update colors */
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+/* Ensures body copy, lists, and general text update inside main components */
+body.dark-theme section,
+body.dark-theme p,
+body.dark-theme li,
+body.dark-theme div:not(.badge) {
+  color: var(--text);
 }
 
 /* --- Header Layout (Centered Photo Above Name) --- */
@@ -93,6 +105,7 @@ section {
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 6px 1px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, color 0.3s;
 }
 
 h2 {
