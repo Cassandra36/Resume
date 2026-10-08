@@ -1,145 +1,494 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cassandra Harbison | IT Support Specialist & Cloud Candidate</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Cassandra Harbison - Resume</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#2563eb', // Blue-600
+                        secondary: '#1e40af', // Blue-800
+                        dark: '#111827',
+                        light: '#f3f4f6'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for subtle animations */
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
-<body>
-    <header>
-		<div class="container">
-           <img src="headshot.jpg" alt="Cassandra Harbison Headshot">
-       </div>
-        <h1>Cassandra Harbison</h1>
-        <p id="tagline">IT Support Specialist | Networking & Cloud | MSITM Candidate</p>
-        <div class="badge-container">
-            <span class="badge">AWS Cloud Practitioner</span>
-            <span class="badge">CompTIA Security+</span>
-            <span class="badge">Network+</span>
-            <span class="badge">A+</span>
-            <span class="badge">ITIL® Foundation</span>
-            <span class="badge">Linux</span>
-            <span class="badge">U.S. Army Veteran</span>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navigation -->
+    <header class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Name -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-xl font-bold text-dark tracking-tight">Cassandra<span class="text-primary">Harbison</span></a>
+                </div>
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-primary transition-colors px-3 py-2 text-sm font-medium">About</a>
+                    <a href="#experience" class="text-gray-600 hover:text-primary transition-colors px-3 py-2 text-sm font-medium">Experience</a>
+                    <a href="#education" class="text-gray-600 hover:text-primary transition-colors px-3 py-2 text-sm font-medium">Education</a>
+                    <a href="#skills" class="text-gray-600 hover:text-primary transition-colors px-3 py-2 text-sm font-medium">Skills</a>
+                    <a href="#contact" class="bg-primary text-white hover:bg-secondary transition-colors px-4 py-2 rounded-full text-sm font-medium shadow-sm">Contact Me</a>
+                </nav>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-        <a href="mailto:charbison4576@gmail.com" class="btn">Contact Me</a>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-lg">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">About</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Experience</a>
+                <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Education</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Skills</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-primary hover:bg-gray-50">Contact Me</a>
+            </div>
+        </div>
     </header>
 
-    <div class="container">
-        <section id="summary">
-            <h2>Professional Profile</h2>
-            <p>IT professional with a successful track record in optimizing technical support and cloud automation. Achieved a 30% reduction in manual workflows through innovative Python scripting, while consistently delivering a 95%+ resolution rate. Actively pursuing an MS in IT to drive further advancements in systems architecture.</p>
-        </section>
-
-        <section id="education">
-            <h2>Education</h2>
-            <div class="edu-item">
-                <strong>Master of Science, IT Management (MSITM)</strong><br>
-                Western Governors University | <em class="status">In Progress (Accelerated Track)</em>
+    <!-- Hero Section -->
+    <section id="about" class="pt-32 pb-20 md:pt-40 md:pb-28 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 fade-in">
+        <div class="md:w-1/2 flex justify-center md:justify-end order-1 md:order-2">
+            <!-- Profile Image -->
+            <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-white shadow-xl overflow-hidden group">
+                <img src="weddingcrop.jpg" onerror="this.onerror=null; this.src='https://placehold.co/400x400/2563eb/ffffff?text=Cassandra+H.';" alt="Cassandra Harbison" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                <!-- Optional overlay effect -->
+                <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
-            <div class="edu-item">
-                <strong>Bachelor of Science, Information Technology (BSIT)</strong><br>
-                Western Governors University | <em>Graduated: 2026</em> 
-		<ul>
-		   <li>Excellence Award: PM Paper</li>
-                   <li>Capstone: Created Media Network for training material distribution.</li>
-		</ul>
+        </div>
+        <div class="md:w-1/2 order-2 md:order-1 text-center md:text-left">
+            <p class="text-primary font-semibold tracking-wide uppercase text-sm mb-2">Hello, I'm</p>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-dark mb-4 leading-tight">Cassandra Harbison</h1>
+            <h2 class="text-xl md:text-2xl text-gray-600 mb-6 font-medium">Senior IT Support & Automation Specialist</h2>
+            <p class="text-gray-600 mb-8 leading-relaxed max-w-lg mx-auto md:mx-0">
+                Senior IT support and automation specialist with 10+ years of experience in technical troubleshooting, systems installation, and process improvement. AWS Certified Cloud Practitioner and CompTIA Security+ certified, with hands-on Python scripting experience and a proven track record of reducing resolution times.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <a href="#contact" class="bg-primary hover:bg-secondary text-white px-8 py-3 rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2">
+                    <i class="fas fa-paper-plane"></i> Contact Me
+                </a>
+                <a href="#" class="bg-white hover:bg-gray-50 text-gray-800 border border-gray-200 px-8 py-3 rounded-full font-medium transition-all duration-300 shadow-sm hover:shadow-md flex items-center justify-center gap-2">
+                    <i class="fas fa-download"></i> Download CV
+                </a>
             </div>
-        </section>
-
-       <section id="experience">
-    <h2>Professional Experience</h2>
-    
-    <!-- Job 1 -->
-    <div class="job">
-        <div class="job-header">
-            <span>Hardware/Software Specialist</span>
-            <span>2018 – Present</span>
+            <!-- Social Links -->
+            <div class="mt-8 flex gap-4 justify-center md:justify-start">
+                <a href="https://linkedin.com/in/cassandraharbison" target="_blank" class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-600 hover:text-primary hover:border-primary transition-all shadow-sm">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
         </div>
-        <div class="company">Nielsen</div>
-        <ul>
-            <li>Manage 30+ daily technical escalations, maintaining a 95%+ resolution rate.</li>
-            <li>Engineered Python scripts in Zeppelin for AWS, reducing manual task time by 30%.</li>
-            <li>Partner with management to design SOPs and training checklists for onboarding.</li>
-            <li>Optimize project workflows using custom search tables and platform configurations.</li>
-            <li>Serve as a technical mentor using GROW leadership training to improve team performance.</li>
-        </ul>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-dark mb-4">Work Experience</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="relative border-l-2 border-gray-200 ml-3 md:ml-0">
+                
+                <!-- Experience Item 1 -->
+                <div class="mb-12 ml-8 md:ml-10 relative">
+                    <div class="absolute -left-10 md:-left-12 mt-1.5 w-4 h-4 bg-primary rounded-full border-4 border-white shadow-sm"></div>
+                    <div class="bg-gray-50 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-dark">Senior Installation Specialist I</h3>
+                                <h4 class="text-lg text-gray-600 font-medium">Nielsen (Columbus, OH)</h4>
+                            </div>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-50 text-primary self-start">
+                                Apr 2018 - Present
+                            </span>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Manage 30+ daily technical support calls, resolving hardware and software issues for enterprise clients within service-level targets.</li>
+                            <li>Built a Python automation script in Apache Zeppelin to extract and process data from AWS, streamlining reporting workflows.</li>
+                            <li>Partnered with management to develop training checklists and standard operating procedures, improving team performance and new-hire onboarding.</li>
+                            <li>Completed advanced leadership training through Nielsen's GROW leadership development program.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="mb-12 ml-8 md:ml-10 relative">
+                    <div class="absolute -left-10 md:-left-12 mt-1.5 w-4 h-4 bg-primary rounded-full border-4 border-white shadow-sm"></div>
+                    <div class="bg-gray-50 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-dark">Field Representative (SWAT)</h3>
+                                <h4 class="text-lg text-gray-600 font-medium">Nielsen</h4>
+                            </div>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-50 text-primary self-start">
+                                May 2015 - Apr 2018
+                            </span>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Managed a geographic territory of panelist households, providing technical support and relationship management for audience-measurement participants.</li>
+                            <li>Installed, configured, and troubleshot proprietary hardware and software to capture audience measurement data across multiple platforms.</li>
+                            <li>Built and maintained long-term client relationships, coaching households on equipment usage and best practices.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Item 3 -->
+                <div class="mb-12 ml-8 md:ml-10 relative">
+                    <div class="absolute -left-10 md:-left-12 mt-1.5 w-4 h-4 bg-gray-300 rounded-full border-4 border-white shadow-sm"></div>
+                    <div class="bg-gray-50 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-dark">Implementation Specialist</h3>
+                                <h4 class="text-lg text-gray-600 font-medium">ClearBridge Technology Group / Oracle Micros</h4>
+                            </div>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-200 text-gray-700 self-start">
+                                Sep 2014 - May 2015
+                            </span>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Developed and maintained databases in Access and Micros for point-of-sale systems tailored to client needs.</li>
+                            <li>Conducted database reviews and on-site hardware installations at client locations, ensuring seamless system integration.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Item 4 -->
+                <div class="mb-12 ml-8 md:ml-10 relative">
+                    <div class="absolute -left-10 md:-left-12 mt-1.5 w-4 h-4 bg-gray-300 rounded-full border-4 border-white shadow-sm"></div>
+                    <div class="bg-gray-50 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-dark">Senior Help Desk Agent, Tier III</h3>
+                                <h4 class="text-lg text-gray-600 font-medium">My Service Depot</h4>
+                            </div>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-200 text-gray-700 self-start">
+                                Feb 2014 - Sep 2014
+                            </span>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Delivered Tier III technical support via inbound/outbound calls, email, and chat, resolving complex software issues.</li>
+                            <li>Developed custom work orders, forms, and reports using Access database to streamline help desk operations.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Volunteer Item -->
+                <div class="mb-12 ml-8 md:ml-10 relative">
+                    <div class="absolute -left-10 md:-left-12 mt-1.5 w-4 h-4 bg-purple-400 rounded-full border-4 border-white shadow-sm"></div>
+                    <div class="bg-gray-50 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-2">
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h3 class="text-xl font-bold text-dark">IT Team Lead / Web Administrator</h3>
+                                    <span class="bg-purple-100 text-purple-700 text-xs px-2 py-0.5 rounded-full font-bold">Volunteer</span>
+                                </div>
+                                <h4 class="text-lg text-gray-600 font-medium">Autonomy Project</h4>
+                            </div>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-50 text-purple-700 self-start">
+                                Oct 2024 - Present
+                            </span>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Lead maintenance of WordPress and Neon-based websites, ensuring timely updates to event pages and content.</li>
+                            <li>Develop automations to streamline daily operations, enhancing efficiency in task management.</li>
+                            <li>Conduct background checks and administrative reviews for membership approvals.</li>
+                            <li>Support event organization and coordinate volunteer efforts to foster community engagement.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col lg:flex-row gap-12">
+            
+            <!-- Education & Certs Section -->
+            <section id="education" class="lg:w-1/2">
+                <div class="mb-10">
+                    <h2 class="text-3xl font-bold text-dark mb-4">Education</h2>
+                    <div class="w-16 h-1 bg-primary rounded-full"></div>
+                </div>
+                
+                <div class="space-y-6 mb-12">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-bold text-dark">M.S. in Information Technology Management</h3>
+                            <span class="text-sm font-medium text-primary">Conferred Sep 2026</span>
+                        </div>
+                        <h4 class="text-gray-600 font-medium mb-3">Western Governors University</h4>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-bold text-dark">B.S. in Information Technology</h3>
+                            <span class="text-sm font-medium text-gray-500">Conferred Mar 2026</span>
+                        </div>
+                        <h4 class="text-gray-600 font-medium mb-3">Western Governors University</h4>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-bold text-dark">A.A.S. in Computer Networking</h3>
+                            <span class="text-sm font-medium text-gray-500">2012</span>
+                        </div>
+                        <h4 class="text-gray-600 font-medium mb-3">Vincennes University</h4>
+                    </div>
+                </div>
+
+                <div class="mb-10">
+                    <h2 class="text-3xl font-bold text-dark mb-4">Certifications</h2>
+                    <div class="w-16 h-1 bg-primary rounded-full"></div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <ul class="space-y-3">
+                        <li class="flex items-center justify-between">
+                            <span class="text-gray-700 font-medium"><i class="fas fa-certificate text-primary mr-2"></i> Certified Agile Leadership I (CAL-1)</span>
+                            <span class="text-sm text-gray-500">2026</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="text-gray-700 font-medium"><i class="fab fa-aws text-[#FF9900] mr-2"></i> AWS Certified Cloud Practitioner</span>
+                            <span class="text-sm text-gray-500">2025</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="text-gray-700 font-medium"><i class="fas fa-certificate text-primary mr-2"></i> Linux Foundations Certificate</span>
+                            <span class="text-sm text-gray-500">2025</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="text-gray-700 font-medium"><i class="fas fa-shield-alt text-green-600 mr-2"></i> CompTIA Security+</span>
+                            <span class="text-sm text-gray-500">2024</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="text-gray-700 font-medium"><i class="fas fa-cogs text-blue-500 mr-2"></i> ITIL Foundation Certification</span>
+                            <span class="text-sm text-gray-500">2024</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="text-gray-700 font-medium"><i class="fas fa-network-wired text-purple-500 mr-2"></i> CompTIA Network+</span>
+                            <span class="text-sm text-gray-500">2023</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="text-gray-700 font-medium"><i class="fas fa-laptop-medical text-red-500 mr-2"></i> CompTIA A+</span>
+                            <span class="text-sm text-gray-500">2023</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="lg:w-1/2">
+                <div class="mb-10">
+                    <h2 class="text-3xl font-bold text-dark mb-4">Core Skills</h2>
+                    <div class="w-16 h-1 bg-primary rounded-full"></div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    
+                    <div class="mb-8">
+                        <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Technical, Web & Support</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-medium text-gray-700">Technical Support & Troubleshooting</span>
+                            <span class="px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-medium text-gray-700">IT Service Management (ITIL)</span>
+                            <span class="px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-medium text-gray-700">Customer Training & Support</span>
+                            <span class="px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-medium text-gray-700">Support SOP Development</span>
+                            <span class="px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-medium text-gray-700 flex items-center gap-2"><i class="fab fa-wordpress text-blue-600"></i> WordPress</span>
+                            <span class="px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-medium text-gray-700 flex items-center gap-2"><i class="fas fa-users-cog text-emerald-600"></i> NeonCRM</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-8">
+                        <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Cloud & Infrastructure</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-medium text-gray-700 flex items-center gap-2"><i class="fab fa-aws text-[#FF9900]"></i> AWS Cloud Services</span>
+                            <span class="px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-medium text-gray-700">Cloud Strategy</span>
+                            <span class="px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-medium text-gray-700 flex items-center gap-2"><i class="fab fa-linux"></i> Linux Administration</span>
+                            <span class="px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-medium text-gray-700">Network & Security</span>
+                            <span class="px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-medium text-gray-700">Cybersecurity Strategy</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-8">
+                        <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Data, Automation & AI</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-medium text-gray-700 flex items-center gap-2"><i class="fab fa-python text-[#3776AB]"></i> Python Scripting & Automation</span>
+                            <span class="px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-medium text-gray-700 flex items-center gap-2"><i class="fas fa-fire text-orange-500"></i> PySpark</span>
+                            <span class="px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-medium text-gray-700 flex items-center gap-2"><i class="fas fa-book-open text-blue-500"></i> Apache Zeppelin</span>
+                            <span class="px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-medium text-gray-700 flex items-center gap-2"><i class="fas fa-robot text-purple-600"></i> AI & Generative AI</span>
+                            <span class="px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-medium text-gray-700 flex items-center gap-2"><i class="fas fa-wand-magic-sparkles text-pink-500"></i> Vibe Coding</span>
+                            <span class="px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-medium text-gray-700">Data Management</span>
+                            <span class="px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-medium text-gray-700">Database Management (MS Access)</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Leadership & Methodology</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-medium text-gray-700">Leadership</span>
+                            <span class="px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-medium text-gray-700">Project Management</span>
+                            <span class="px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-medium text-gray-700">Agile</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
     </div>
 
-    <!-- Job 2 -->
-    <div class="job">
-        <div class="job-header">
-            <span>Field Representative</span>
-            <span>2015 – 2018</span>
-        </div>
-        <div class="company">Nielsen</div>
-        <ul>
-            <li>Delivered technical support and hardware troubleshooting for proprietary systems.</li>
-            <li>Oversaw geographic assignments, achieving 100% compliance with data requirements.</li>
-        </ul>
-    </div>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-dark mb-4">Get In Touch</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+            </div>
 
-    <!-- Job 3 -->
-    <div class="job">
-        <div class="job-header">
-            <span>Implementation Specialist</span>
-            <span>2014 - 2015</span>
-        </div>
-        <div class="company">Clearbridge|Micros|Oracle</div>
-        <ul>
-            <li>Delivered technical support and hardware troubleshooting for proprietary systems.</li>
-            <li>Led hardware installations and staff training at client sites.</li>
-        </ul>
-    </div>
-</section>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Contact Info -->
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 flex flex-col justify-center h-full">
+                    <div class="flex items-start gap-4 mb-8">
+                        <div class="w-12 h-12 bg-blue-50 text-primary rounded-xl flex items-center justify-center shrink-0">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-dark mb-1">Email</h3>
+                            <a href="mailto:charbison4576@gmail.com" class="text-gray-600 hover:text-primary transition-colors">charbison4576@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-4 mb-8">
+                        <div class="w-12 h-12 bg-blue-50 text-primary rounded-xl flex items-center justify-center shrink-0">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-dark mb-1">LinkedIn</h3>
+                            <a href="https://linkedin.com/in/cassandraharbison" target="_blank" class="text-gray-600 hover:text-primary transition-colors">linkedin.com/in/cassandraharbison</a>
+                        </div>
+                    </div>
 
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-blue-50 text-primary rounded-xl flex items-center justify-center shrink-0">
+                            <i class="fas fa-map-marker-alt text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-dark mb-1">Location</h3>
+                            <p class="text-gray-600">Columbus, Ohio</p>
+                        </div>
+                    </div>
+                </div>
 
-       <section id="skills">
-    <h2>Technical Skills</h2>
-    <div class="skills-grid">
-        <div class="skills-category">
-            <h3>Cloud & DevOps</h3>
-            <ul>
-                <li>AWS Cloud Services</li>
-                <li>CI/CD Practices</li>
-                <li>Process Improvement</li>
-                <li>Linux</li>
-            </ul>
+                <!-- Contact Form -->
+                <form class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="mb-4">
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="John Doe" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="john@example.com" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all resize-none" placeholder="Hello, I'd like to talk about..." required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary hover:bg-secondary text-white font-medium py-3 px-4 rounded-lg transition-colors shadow-sm">
+                        Send Message
+                    </button>
+                </form>
+            </div>
         </div>
-        <div class="skills-category">
-            <h3>Core IT & Cyber</h3>
-            <ul>
-                <li>Technical Support</li>
-                <li>Cybersecurity Fundamentals</li>
-                <li>SOP Development</li>
-                <li>Point of Sale Systems</li>
-            </ul>
-        </div>
-        <div class="skills-category">
-            <h3>Development & Data</h3>
-            <ul>
-                <li>Python Programming</li>
-                <li>SQL Database Management</li>
-                <li>Web Development</li>
-                <li>Responsive Design / Frameworks</li>
-            </ul>
-        </div>
-        <div class="skills-category">
-            <h3>Leadership & Agile</h3>
-            <ul>
-                <li>Project Management</li>
-                <li>Agile Methodologies</li>
-                <li>Team Training & Onboarding</li>
-                <li>Leadership Development (GROW)</li>
-            </ul>
-        </div>
-    </div>
-</section>
+    </section>
 
-    <footer>
-        <p>&copy; 2026 Cassandra Harbison • Columbus, OH</p>
-        <button id="theme-toggle">Switch Theme</button>
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-2xl font-bold tracking-tight">
+                Cassandra<span class="text-primary">Harbison</span>
+            </div>
+            
+            <div class="flex gap-6">
+                <a href="https://linkedin.com/in/cassandraharbison" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
+            </div>
+
+            <p class="text-gray-500 text-sm text-center md:text-left">
+                &copy; <script>document.write(new Date().getFullYear())</script> Cassandra Harbison. All rights reserved.
+            </p>
+        </div>
     </footer>
-    <script src="script.js"></script>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu on link click
+            const mobileLinks = menu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                });
+            });
+
+            // Form submission handler (prevent default for demo)
+            const form = document.querySelector('form');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                // You would typically handle sending the email here
+                // For example, using a service like Formspree or EmailJS
+                
+                // Show a simple visual feedback
+                const btn = form.querySelector('button[type="submit"]');
+                const originalText = btn.innerText;
+                btn.innerText = 'Message Sent!';
+                btn.classList.add('bg-green-600', 'hover:bg-green-700');
+                btn.classList.remove('bg-primary', 'hover:bg-secondary');
+                
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.classList.remove('bg-green-600', 'hover:bg-green-700');
+                    btn.classList.add('bg-primary', 'hover:bg-secondary');
+                    form.reset();
+                }, 3000);
+            });
+        });
+    </script>
 </body>
 </html>
