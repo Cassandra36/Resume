@@ -382,7 +382,10 @@
                         <i class="fas fa-envelope text-xl"></i>
                     </div>
                     <h3 class="text-lg font-bold text-dark mb-1">Email</h3>
-                    <a href="mailto:charbison4576@gmail.com" class="text-gray-600 hover:text-primary transition-colors text-sm break-all">charbison4576@gmail.com</a>
+                    <a href="mailto:charbison4576@gmail.com" class="text-gray-600 hover:text-primary transition-colors text-sm break-all mb-3">charbison4576@gmail.com</a>
+                    <button onclick="copyEmail()" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-primary bg-blue-50 hover:bg-blue-100 rounded-full transition-colors">
+                        <i class="far fa-copy"></i> <span id="copy-btn-text">Copy Email</span>
+                    </button>
                 </div>
                 
                 <!-- LinkedIn Card -->
@@ -442,6 +445,26 @@
                 });
             });
         });
+
+        // Copy Email to Clipboard Function
+        function copyEmail() {
+            const email = 'charbison4576@gmail.com';
+            const btnText = document.getElementById('copy-btn-text');
+            
+            const tempInput = document.createElement('input');
+            tempInput.value = email;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            if (btnText) {
+                btnText.innerText = 'Copied to Clipboard!';
+                setTimeout(() => {
+                    btnText.innerText = 'Copy Email';
+                }, 2000);
+            }
+        }
     </script>
 </body>
 </html>
